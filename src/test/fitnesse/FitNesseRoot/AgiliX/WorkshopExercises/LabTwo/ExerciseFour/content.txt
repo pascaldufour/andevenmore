@@ -1,0 +1,15 @@
+!2 Exercice 4 - Refactor your table and your class
+The goal of this exercise is to get introduced to the '''Script''' table and see some differences between the '''Script''' and the '''Decision''' tables.
+
+Remember that it's about communication and creating a common understanding on what needs to be developed.
+Think from the perspective of the Product Owner and other team members when you design your table. They care about the behavior and the understanding of the test when using !-FitNesse-!. Keep implementation details out of your tabels.
+ 
+ 1 Create a '''Script''' table in your !-SprintZero.SimpleCalculatorSpecification-! page for your Calculator class representing the same or additional examples. 
+ 2 Use the '''check''' keyword to match the calculation results.
+ 3 Make the test fail.
+ 4 Extend the Calculation class as needed to fit your expressive table.
+ 5 Make all the tests succeed.
+ 6 Refactor the Calculator class if needed or add a fixture class that separates the SUT from your table.
+ 7 Make all the tests succeed.
+ 
+See http://www.fitnesse.org/FitNesse.FullReferenceGuide.UserGuide.WritingAcceptanceTests.SliM.ScriptTable for details on the  Script table.

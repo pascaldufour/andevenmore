@@ -1,0 +1,29 @@
+!2 Exercise 8
+We are going to realize an blogging application. With this application you can create a blog and write posts for it.
+Others can post comments on your posts.
+
+In this exercise you will develop the Java code and also the acceptance tests in Fitnesse! The Java code is developed in a TDD test first style.
+You will need a pair because we will do some pair programming. Preferably your pair is a tester.
+
+!3 Sprint 1
+The following user stories have to de developed
+
+'''Story 1'''
+'''As a''' person wanting to become a blogger
+'''I want''' to create a blog
+'''So I can''' start posting
+
+'''Acceptance criteria'''
+'''Given''' a blog named Banana Blog that is owned by Cesario
+'''When''' another blog named Banana Blog is created by Cesario
+'''Then''' Cesario has one blog named Banana Blog
+
+'''Given''' a blog named Banana Blog that is owned by Cesario
+'''When''' another blog named Banana Blog is created by Piet
+'''Then''' Cesario has one blog named Banana Blog
+'''And''' Piet has one blog named Banana Blog
+
+'''Given''' a blog named Banana Blog that is owned by Cesario
+'''When''' another blog named Apple Blog is created by Cesario
+'''Then''' Cesario has one blog named Banana Blog
+'''And''' Cesario has one blog named Apple Blog

@@ -1,0 +1,15 @@
+!path /Users/Cesario/Development/Java/AgileTestTraining/Labs/target/classes/
+
+----
+!3 Exercise 2 - !-HelloWorld for FitNesse-!
+
+!|exercise2.HelloWorld|
+|helloFitNesse?|
+|Hello FitNesse|
+
+
+!|exercise2.HelloWorld|
+|text|helloFitNesse?|
+|A-TDD Rules|Hello A-TDD Rules|
+|Banana|Hello Banana|
+|Apple|Hello Apple|

@@ -1,0 +1,16 @@
+!contents -R2 -g -p -f -h
+
+
+We are going to user this http://files/examplesheets/ as input.
+
+!|Berekening A|
+|Item 1|Item 2|Item 3|Berekening|Resutaat|
+|1|a|!|AA|123.34|
+|2|b|@|BB|1245.3223|
+|3|c|#|CC|66.74|
+|4|de|$|DD|784.23|
+|5|f|%|EE|23234.32|
+|6|g|^|FF|4542.3232|
+|7|h|&|GG|23.4546|
+|8|j|*|HH|23|
+|9|i|(|II|923.23|

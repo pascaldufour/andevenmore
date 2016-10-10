@@ -1,0 +1,14 @@
+----
+!path /Users/Cesario/Development/Java/AgileTestTraining/Labs/target/classes/
+----
+!2 ''Stories''
+
+>StoryZero
+>StoryOne
+>StoryTwo
+>SimpleCalculatorSpecification
+>SimpleAtm
+
+----
+>HelloWorld
+

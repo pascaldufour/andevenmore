@@ -1,0 +1,19 @@
+!|scenario        |Given the account has _ dollars in credit|dollarsInCredit|
+|dollarsInCredit|@dollarsInCredit                                             |
+
+!|scenario        |Given the dispenser contains _ dollars|dollarsInDispenser|
+|dollarsInDispenser|@dollarsInDispenser                                             |
+
+!|scenario|When the customer withdraws _ dollars|requestedDollars|
+|requestDollars|@requestedDollars|
+
+!|scenario|Then ensure the account contains _ dollars|amount|
+|check|accountSaldo|@amount|
+
+!|scenario|Then ensure cash is dispensed from the dispenser|
+|ensure|cashDispensed|
+
+|scenario|Then the dispenser should have _ dollars|dispenserAmount|
+|check|dispenserAmount|@dispenserAmount|
+
+!|scenario|And|

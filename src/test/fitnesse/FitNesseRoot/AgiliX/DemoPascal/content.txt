@@ -1,0 +1,14 @@
+!contents -R2 -g -p -f -h
+
+!|HelloWorld|
+|Text|helloFitNesse?|
+|Pascal|Hello Pascal|
+|Baboon|Hello Baboon|
+
+
+!|Script|Calculator|
+|operand1|1|
+|operand2|2|
+|plus|
+|check|result|3|
+

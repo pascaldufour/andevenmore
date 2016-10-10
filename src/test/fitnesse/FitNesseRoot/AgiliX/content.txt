@@ -1,0 +1,15 @@
+!define TEST_SYSTEM {slim}
+
+!*> '''Classpath'''
+${maven.classpath}
+*!
+
+----
+
+!2 Training Contents
+>WorkshopExercises
+
+!2 Solutions
+>AcceptanceTestDrivenDevelopment
+
+----

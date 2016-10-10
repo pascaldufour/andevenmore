@@ -1,0 +1,138 @@
+----
+
+!2 Exercise 7
+
+You are realizing a booking system. In this system you can make a reservations for training rooms.
+Depending on when you cancel your reservation a part of the total price of the reservation has to be paid.
+See below a generalized requirements description.
+
+!4 Requirements
+{{{
+Cancellation policy for all in agreements
+cancellation more then 6 months before arrival, No costs
+cancellation more then 3 months before arrival, 10% of the total price
+cancellation more then 2 months before arrival, 15% of the total price
+cancellation more then 1 month before arrival, 35% of the total price
+cancellation more then 14 days before arrival, 60% of the total price
+cancellation more then 7 days before arrival, 85% of the total price
+cancellation less then 7 days before arrival, 100% of the total price
+}}}
+
+----
+
+!4 a. Use a decision table to capture these requirements
+
+|Calculate price percentage of a cancellation                         |
+|Months before arrival|Price percentage of the total price to be paid?|
+|7                    |0                                              |
+|5                    |10                                             |
+|4                    |10                                             |
+|3                    |15                                             |
+|2                    |35                                             |
+
+
+|Calculate price percentage of a cancellation                       |
+|Days before arrival|Price percentage of the total price to be paid?|
+|15                 |60                                             |
+|14                 |85                                             |
+|8                  |85                                             |
+|0                  |100                                            |
+
+{{{ 
+The above tables are a direct mapping of the requirement. Looking at these tables it is still unclear what should happen in case of cancellation 5 months
+before arrival. Further more what are the costs that must be paid in case you cancel 5 months before arrival?
+}}}
+
+----
+
+!4 b. Create a new version where you calculate the costs to be paid instead of the percentage.
+
+|Calculate price percentage of a cancellation              |
+|Months before arrival|Total cost of the reservation|Costs?|
+|7                    |1000                         |0     |
+|4                    |1000                         |100   |
+|4                    |2500                         |250   |
+|3                    |1000                         |150   |
+|2                    |1000                         |350   |
+
+|Calculate price percentage of a cancellation            |
+|Days before arrival|Total cost of the reservation|Costs?|
+|15                 |1000                         |600   |
+|8                  |1000                         |850   |
+|0                  |1000                         |1000  |
+
+{{{
+These are concrete examples including the actual amount you have to pay for cancellation. These tables are usefull if the cost of the reservation changes for every test. 
+But in the case above it remains constant. The total amount of the reservation is duplicated in every row. Let's fix that so that our tables become more maintainable.
+}}}
+
+----
+
+!4 c. Remove the duplication found in the above tables. 
+
+|Calculate price percentage of a cancellation with a total reservation cost of|1000  |
+|Months before arrival                                                        |Costs?|
+|7                                                                            |0     |
+|4                                                                            |100   |
+|3                                                                            |150   |
+|2                                                                            |350   |
+|0                                                                            |1000   |
+
+|Calculate price percentage of a cancellation with a total reservation cost of|1000  |
+|Days before arrival                                                          |Costs?|
+|15                                                                           |600   |
+|8                                                                            |850   |
+|0                                                                            |1000  |
+
+{{{
+This is good but can we make it better? Can we express the initial requirements exactly in FitNesse? Yes we can.
+}}}
+
+----
+
+!4 d. Use scenario tables and a plain text tables to express the initial requirements exactly.
+
+!|scenario                      |more then _ months before arrival, No costs|numberOfMonths|
+|set moreThenMonthsBeforeArrival|@numberOfMonths                                           |
+|check                          |pricePercentageOfTheTotalPriceToBePaid     |0             |
+
+!|scenario                      |more then _ months before arrival, _% of the total amount|numberOfMonths, percentage|
+|set moreThenMonthsBeforeArrival|@numberOfMonths                                                                     |
+|check                          |pricePercentageOfTheTotalPriceToBePaid                   |@percentage               |
+
+!|scenario                    |more then _ days before arrival, _% of the total amount|numberOfDays, percentage|
+|set moreThenDaysBeforeArrival|@numberOfDays                                                                   |
+|check                        |pricePercentageOfTheTotalPriceToBePaid                 |@percentage             |
+
+!|scenario                    |less then _ days before arrival, _% of the total amount|numberOfDays, percentage|
+|set lessThenDaysBeforeArrival|@numberOfDays                                                                   |
+|check                        |pricePercentageOfTheTotalPriceToBePaid                 |@percentage             |
+
+
+!4 Cancellation Policy For All Inclusive Arrangements
+
+|script|Cancellation Policy For All Inclusive Arrangements|
+
+![ script
+more then 6 months before arrival, No costs
+more then 3 months before arrival, 10% of the total amount
+more then 2 months before arrival, 15% of the total amount
+more then 1 months before arrival, 35% of the total amount
+more then 14 days before arrival, 60% of the total amount
+more then 7 days before arrival, 85% of the total amount
+less then 7 days before arrival, 100% of the total amount
+]!
+
+{{{ 
+The above tables are a direct mapping of the requirement. Looking at these tables it is still unclear what should happen in case of cancellation 5 months
+before arrival. Further more what are the costs that must be paid in case you cancel 5 months before arrival?
+}}}
+
+
+!4 Lets use some BDD style formatting for our specification
+
+So the format would be
+
+GIVEN a reservation data of 10-10-2010
+AND GIVEN a reservation price of 1000 euro
+WHEN I cancel on 10-06-2011

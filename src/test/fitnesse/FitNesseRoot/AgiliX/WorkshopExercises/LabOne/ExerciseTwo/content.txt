@@ -1,0 +1,13 @@
+!2 Exercise 2 - !-HelloWorld for FitNesse-!
+Goal of this exercise is to create our first Slim table and fixture.
+
+ 1 Add a Hello World page with a !-SliM-! tabel to your !-SprintZero-! page. Think about which Slim table is best to use. The !-DecisionTable-! is the default used by !-FitNesse-!.
+ 2 '''OPTIONAL''' Make Slim your test system by adding defining the following variable '''TEST_SYSTEM={slim}'''.
+ 3 Make the test fail.
+ 4 '''OPTIONAL''' Create a !-HelloWorld-! class in your IDE and add a method to it that returns !-"Hello FitNesse"-!
+ 5 Make the test succeed!
+
+!note Remember that !-FitNesse-! is a hierarchical Wiki.
+!note Do not forget to add a path reference to your classes.
+!note You can define your page to be of type '''Test''' by clicking on the page properties button and selecting '''Test'''.
+

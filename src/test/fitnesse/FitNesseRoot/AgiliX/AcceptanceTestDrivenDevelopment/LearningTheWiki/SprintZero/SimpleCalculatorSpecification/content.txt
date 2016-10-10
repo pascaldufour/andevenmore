@@ -1,0 +1,29 @@
+----
+!4 Exercise 3
+!|Calculator|
+|operand1|operand2|operator|result?|
+|1|2|plus|3|
+|3|5|times|15|
+|3|10|times|30|
+|3|100|times|300|
+|13|100|times|1300|
+|3|6|times|18|
+|3|8|times|24|
+
+----
+!4 Exercise 4
+
+!5 Added a table class to mediate between the Slim tables and the SUT.
+!|exercise4.CalculationsTable|
+|operand1|operand2|operator|result?|
+|1|2|plus|3|
+|3|5|times|15|
+----
+!5 The new Script table using the refactored Calculator class.
+!|Script|exercise4.Calculator|
+|operand1|6|
+|operand2|2|
+|check|plus|8|
+|check|times|12|
+|operand1|12|
+|check|plus|14|

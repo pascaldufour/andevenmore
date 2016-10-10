@@ -1,0 +1,66 @@
+----
+!3 Exercise 5
+
+The goal of this exercise is to learn how write BDD style tables. You will learn about Scenario Tables, 
+Scenario Libraries and the Plain Text Table.
+
+See below a user story selected from the backlog. 
+
+'''Story: Customer withdraws cash '''
+'''As''' a customer
+ '''I want''' to withdraw cash from an ATM
+ '''So that''' I don’t have to wait in line at the bank.
+
+During the requirements workshop you discussed about how you could show that this user story works. 
+As a Scrum Team e.g. the Product Owner, the Scrum Master and the Team, you came up with the requirement by example below.
+
+'''Scenario''' Account is in credit
+ '''Given''' the account has 10 dollars in credit
+ '''And Given''' the dispenser contains 1000 dollars
+'''When''' the customer withdraws 5 dollars
+ '''Then''' ensure the account contains 5 dollars 
+'''And Then''' ensure cash is dispensed from the dispenser
+'''And''' the dispenser should have 995 dollars
+
+!4 Assignment 1
+Study how the Fitnesse table exactly mimics the scenario above. It uses the scenario tables below to achieve that.
+
+!|Script|exercise5.BDDStyle|
+
+'''Scenario''' Account is in credit
+![ script
+Given the account has 10 dollars in credit
+And 
+Given the dispenser contains 1000 dollars 
+When the customer withdraws 5 dollars
+Then ensure the account contains 5 dollars
+And 
+Then ensure cash is dispensed from the dispenser
+And 
+Then the dispenser should have 995 dollars
+]!
+
+!4 Assignment 2
+
+Make a Plain Text tale for the scenario below.
+
+'''Given''' the account has 10 dollars in credit
+'''When''' the customer withdraws 7 dollars
+'''Then''' ensure the account contains 3 dollars
+'''When''' the customer withdraws 2 dollars
+'''Then''' ensure the account contains 1 dollars
+'''When''' the customer withdraws 5 dollars
+'''Then''' ensure the account contains 1 dollars
+
+'''Scenario''' Account does not have enough credit
+![ script
+Given the account has 10 dollars in credit
+When the customer withdraws 7 dollars
+Then ensure the account contains 3 dollars
+When the customer withdraws 2 dollars
+Then ensure the account contains 1 dollars
+When the customer withdraws 5 dollars
+Then ensure the account contains 1 dollars
+]!
+
+Study the code in exercise5.BDDStyle that the scenario use as the Fixture.

@@ -1,0 +1,16 @@
+----
+!2 Exercise 1a - Basic Wiki pages
+The goal of this exercise is to introduce you to the basic !-FitNesse-! Wiki actions. You will create a project Sub Wiki, learn how to 
+delete, rename and define subpage links.
+
+ 1 Start Fitnesse and open the !-FitNesse-! start page.
+ 2 Create a start page for your Project. 
+ 3 Add a header and footer page displaying info regarding your project.
+ 4 Add the following ancestor pages. !-SprintOne, SprintTwo and SprintThree-!. The sprints should be subpages of your project page.
+
+!2 Exercise 1b - Basic Wiki pages
+ 1 Add subpages called '''!-StoryZero, StoryOne, StoryTwo-!''' to the subpage !-SprintZero-!
+ 2 Rename the !-StoryZero-! page to !-SprintZero.SimpleCalculatorSpecification-!
+ 3 Remove the !-StoryOne, StoryTwo-! pages from >SprintZero
+
+See http://www.fitnesse.org/FitNesse.UserGuide.FitNesseWiki.MarkupLanguageReference for more details.

@@ -1,0 +1,27 @@
+!2 Exercise 3 - Create a test set for a simple calculator.
+The goal of this exercise is to create a more complex Slim Table and fixture.
+You will also use some additional tables and pages to organize your !-FitNesse-! pages.
+!-Our SUT is a simple Java class that has various method for performing calculations.-!
+!-Develop a SliM table that lets your Product Owner, and your team members express various test cases on the calculator.-!
+
+A few examples...
+{{{
+Given a 1
+And given a 2
+When I press Plus
+Then the result should be 3
+
+Given a 3
+and given a 5
+When I press Times
+Then the result should be 15
+}}}
+
+ 1 Create a '''Decision''' table in your !-SprintZero.SimpleCalculatorSpecification-! page
+ 2 Make sure your table represents the above examples.
+ 3 Make the test fail.
+ 4 Use the Calculator Java class in your IDE.
+ 5 Make the test succeed.
+ 6 Use the import table to enable you to directly reference your Calculator class in your table.
+ 7 Move import table into a !-SetUp-! page.
+ 8 Everything should still work...

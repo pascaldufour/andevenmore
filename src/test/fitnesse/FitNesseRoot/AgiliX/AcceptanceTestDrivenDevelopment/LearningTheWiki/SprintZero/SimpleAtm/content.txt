@@ -1,0 +1,20 @@
+----
+!4 A simple example of the reject and ensure words.
+!|script|exercise4.SimpleDummyATMFixture|
+|reject|card number|1234|pin number|1234|
+|reject|card number|1234|pin number|0000|
+|ensure|card number|1234|pin number|4321|
+----
+!4 A simple example of flow table.
+!|Script|exercise4.SimpleDummyATMFixture|
+|enter card with number|1234|and enter pin number|4321|
+|ensure|pin correct|
+|check|credit amount is|1000|
+|select amount of|50|euro|
+|select receipt|
+|confirm transaction|
+|check|credit amount is|0|
+|check|amount emitted is|50|
+|check not|amount emitted is|>50|
+|show|receipt|
+----

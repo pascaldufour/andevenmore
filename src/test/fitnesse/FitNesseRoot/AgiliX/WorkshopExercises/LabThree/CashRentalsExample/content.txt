@@ -1,0 +1,116 @@
+----
+
+!3 Exercise 
+
+'''Cash Rentals''' example used from the book '''Fit for software development'''.
+
+A cash rental occurs when someone comes in to rent some part equipment, such as a coffee dispenser, for some time period.
+It's called 'cash' if the client has not made a booking and will pay immediately rather then on account.
+A staf member at the rental company serves the client , recording the details, if necessary, as well as what the client
+wants to rent ans for how long. A time period is kept of what the client rented and when; 
+that way, when the rental goods are returned, a check can be made a to wether the client owes more money or is due a refund of the deposit.
+
+Below there are two user stories with accompanying scenarios.
+
+!4 User story
+'''As a''' Staff member
+'''I want''' to create a rental
+'''So that''' I can keep track of what was rented to whom
+
+!4 Scenario -  successful rental
+'''Given''' the rental items
+|Comment|
+|Name|Count|Cost per day|
+|Coffee dispenser|10|8.20|
+|Hot water dispenser|12|8.00|
+'''And Given''' client Joanna with phone 373 7599
+'''When''' Joanna hires 5 coffee dispensers for 1 day
+'''And''' When Joanna hires 2 hot water dispensers for 2 days
+'''Then''' the cost should be 73
+'''And Then''' the rental list should be
+|Comment|
+|Client|Rental Item|Count|Days|
+|Joanna|Coffee dispenser|5|1|
+|Joanna|Hot water dispenser|2|2|
+
+!4 User story
+'''As a '''Staff member
+'''I want''' to check returned goods
+'''So that''' I can determine if the client owes more money or is due a refund
+
+!4 Scenarios
+'''Given''' Joanna made the following rentals
+|Comment|
+|Client|Rental Item|Count|Days|
+|Joanna|Coffee dispenser|5|1|
+|Joanna|Hot water dispenser|2|2|
+'''When''' Joanna return 4 coffee dispensers
+'''And When''' Joanna returns 2 how water dispensers
+'''And When''' the goods are returned within the rent time period
+'''Then''' the rental list should be
+
+|Comment|
+|Client|Rental Item|Count|Days|
+|Joanna|Coffee dispenser|1|1|
+'''And Then''' there is a total of 0 dollars open.
+
+----
+
+!3 Assignment
+In the exercise6.domain package you will find the Java code for the very simple Rental System. 
+You will find a !-RentalSystem-! class that contains most of the business logic. Next to that you will find a !-RentalRepository-! class that
+is responsible for all object storage and access, an entity !-RentalItem-! and value objects !-HiredItem-! and Client.
+
+Realize the scenarios described above using what you have learned today. 
+In order to do so you must create various Fixture classes that will be called from your tables and will interact with the domain classes.
+You must use these domain classes and cannot change them :)
+
+You might need the following tables
+
+!see .FitNesse.UserGuide.PlainTextTable
+!see .FitNesse.UserGuide.SliM.ImportTable
+!see .FitNesse.UserGuide.SliM.QueryTable
+!see .FitNesse.UserGuide.SliM.ScriptTable
+!see .FitNesse.UserGuide.SliM.DecisionTable
+
+Lets set up the test data first!
+
+
+'''Step 1 - Create the nessecary data for your test table''' 
+!note You could use a Decision table for that!
+
+'''Step 2 - Create a table that makes the scenario work without the Rental List requirements.'''
+!note You could use a Script table for that!
+
+'''Step 3 - Create a table that takes care of the Rental List requirements.'''
+!note You could use a Query table for that!
+
+|import|
+|exercise6|
+
+!|Enter Rental items|
+|Item Name|Count|Cost per day|add item?|
+|Coffee dispenser|10|8.2|true|
+|Hot water dispenser|12|8.0|true|
+|Bananen|120|1.0|true|
+
+!|Enter Clients|
+|Client Name|Phone|add client?|
+|Joanna|3737599|true|
+|Cesario|123456|true|
+
+!|Script|Succesfull rental scenario|
+|client|Joanna|hires|5|of|Coffee dispenser|for|1|days|
+|client|Joanna|hires|2|of|Hot water dispenser|for|2|days|
+|check|costs|73|
+|client|Cesario|hires|1|of|Hot water dispenser|for|1|days|
+|check|costs|8|
+
+!|Query:RentalList|Joanna|
+|Client|Rental Item|Count|Days|
+|Joanna|Coffee dispenser|5|1|
+|Joanna|Hot water dispenser|2|2|
+
+!|Query:RentalList|Cesario|
+|Client|Rental Item|Count|Days|
+|Cesario|Hot water dispenser|1|1|

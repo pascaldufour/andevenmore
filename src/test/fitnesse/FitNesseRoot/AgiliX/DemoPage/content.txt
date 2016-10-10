@@ -1,0 +1,29 @@
+!contents -R2 -g -p -f -h
+
+!|Hello World|
+|helloFitNesse?|
+|Hello banana|
+
+!|Hello World|
+|text|helloFitNesse?|
+|A-TDD Rules|Hello A-TDD Rules|
+|Banana|Hello Banana|
+|Apple|Hello Apple|
+
+
+As a ...
+I Want ...
+So That ...
+
+!|Calculator|
+|operand1|operand2|operator|result?|
+|3|2|plus|5|
+|12|4|times|48|
+
+!|Script|exercise4.Calculator|
+|operand1|6|
+|operand2|2|
+|check|plus|8|
+|check|times|12|
+|operand1|12|
+|check|plus|14|

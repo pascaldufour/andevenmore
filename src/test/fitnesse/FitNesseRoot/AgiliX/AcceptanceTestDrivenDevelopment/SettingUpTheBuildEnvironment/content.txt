@@ -1,0 +1,10 @@
+----
+!2 Exercise 5 - Configure Maven and Trinidad
+
+
+
+----
+!2 Exercise 6 - Configure Junit for !-FitNesse-!
+
+
+

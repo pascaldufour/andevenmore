@@ -1,0 +1,32 @@
+!contents -R2 -g -p -f -h
+
+----
+!path /Users/Cesario/Development/Java/AgileTestTraining/Labs/target/classes/
+!path /Users/Cesario/.m2/repository/joda-time/joda-time/1.6.2/joda-time-1.6.2.jar
+----
+
+!|Matrix|
+|M1       |
+|0|0|0|0|0|
+|0|1|1|0|0|
+|0|1|1|0|0|
+|0|0|0|0|0|
+|0|0|0|0|0|
+
+!|plus|
+
+|Matrix|
+|0|0|0|0|0|
+|0|1|1|0|0|
+|0|1|1|0|0|
+|0|0|0|0|0|
+|0|0|0|0|0|
+
+|equals|
+|M3|
+|0|0|0|0|0|
+|0|1|1|0|0|
+|0|1|1|0|0|
+|0|0|0|0|0|
+|0|0|0|0|0|
+
